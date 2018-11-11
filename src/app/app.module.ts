@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 // duong add new component
@@ -13,7 +14,8 @@ import { AdminComponent } from './admin/admin.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Kiem Tien Online'} },
   { path: 'home', component: HomeComponent, data: { title: 'Kiem Tien Online'} },
-  { path: 'admin', component: AdminComponent, children: [] },
+  { path: 'admin', component: AdminComponent, children: [], data: { title: 'Kiem Tien Online'} },
+  { path: 'demo', component: DemoComponent, data: { title: 'Kiem Tien Online'}},
   { path: '',
     redirectTo: '',
     pathMatch: 'full',
@@ -29,6 +31,8 @@ const appRoutes: Routes = [
     AdminComponent
   ],
   imports: [
+	HttpClientModule,
+	HttpModule,
     BrowserModule,
     RouterModule.forRoot(
       appRoutes,
