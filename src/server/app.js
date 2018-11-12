@@ -18,43 +18,24 @@ app.use(bodyParser.json())
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "*");
+  res.header("Authorization", "5p53iN9yd3");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization");
   next();
 });
 
 app.get('/', (req, res) => 
 {
-	//res.setHeader('Content-Type', 'application/json');
-    //res.send(JSON.stringify({ ip: 1 }));
-	/*var data = {
-    'ip': '192.168.0.1'
-  };
-  res.json(data);*/
-  
-  con.query("select * from settings", function (err, result, fields) {
-	 res.json(result[0]);
-  });
+ /* con.query("select * from settings", function (err, result, fields) {
+	if(req.headers.authorization)
+		res.json(result[0]);
+	else
+		res.json({ message: 'Please make sure your request has an Authorization header' });
+
+  });*/
+	res.json({'ip': '192.168.0.1'});
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
-/*
-// Add headers
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    //res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    //res.setHeader('Access-Control-Allow-Credentials', false);
-
-    // Pass to next layer of middleware
-    next();
-});*/

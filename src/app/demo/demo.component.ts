@@ -8,14 +8,15 @@ import {IpService} from './../ip.service';
 })
 export class DemoComponent implements OnInit {
 	
-	obj;
+	ip: string;
 	constructor(private ipService:IpService) { }
 
 	ngOnInit() {
 		this.obj = this.ipService.getIp().subscribe((data: {}) => {
-			console.log(data);
+			this.ip = data['ip'];
+			console.log(this.ip);
 		});
-		//console.log(this.obj['ip']);
+		
 	}
 
 }
