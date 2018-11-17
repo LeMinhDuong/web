@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DemoComponent } from './demo/demo.component';
 import { AdminComponent } from './admin/admin.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Kiem Tien Online'} },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+	FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

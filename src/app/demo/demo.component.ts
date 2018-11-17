@@ -12,7 +12,7 @@ export class DemoComponent implements OnInit {
 	constructor(private ipService:IpService) { }
 
 	ngOnInit() {
-		this.obj = this.ipService.getIp().subscribe((data: {}) => {
+		this.ipService.getIp().subscribe((data: {}) => {
 			this.ip = data['ip'];
 			console.log(this.ip);
 		});

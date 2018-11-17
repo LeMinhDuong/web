@@ -28,14 +28,29 @@ app.use(function(req, res, next) {
 
 app.get('/', (req, res) => 
 {
- /* con.query("select * from settings", function (err, result, fields) {
-	if(req.headers.authorization)
-		res.json(result[0]);
-	else
-		res.json({ message: 'Please make sure your request has an Authorization header' });
-
-  });*/
+	/* */
 	res.json({'ip': '192.168.0.1'});
 })
+
+app.get('/get-settings', (req, res) =>
+{
+	con.query("select * from settings", function (err, result, fields) {
+	if(req.headers.authorization)
+		res.json(result);
+	else
+		res.json({ message: 'Error' });
+    });
+})
+
+app.get('/get-media', (req, res) =>
+{
+	con.query("select * from media", function (err, result, fields) {
+	if(req.headers.authorization)
+		res.json(result);
+	else
+		res.json({ message: 'Error' });
+    });
+})
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
