@@ -3,6 +3,10 @@ const app = express()
 const port = 3000
 var bodyParser = require('body-parser')
 var mysql = require('mysql');
+
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
+
 var con = mysql.createConnection({
   host: "localhost", // ip address of server running mysql
   user: "root", // user name to your mysql database
@@ -15,6 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+app.use(cors());
+
+// DECLARE JWT-secret
+const JWT_Secret = 'N9ovnFhqCo';
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
