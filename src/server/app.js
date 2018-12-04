@@ -107,9 +107,24 @@ app.get('/get-user-by-email', (req, res) =>
 	let queryString = "select * from users where email = ? ";
 	let email = req.query.email;
 	let auth_token = req.query.auth_token;
-	console.log(email);
+	//console.log(email);
 	
 	con.query(queryString, [email], function (err, result, fields) {
+	if(req.headers.authorization)
+		res.json(result);
+	else
+		res.json({ message: 'Error' });
+    });
+})
+
+app.get('/get-point-by-userid', (req, res) =>
+{
+	let queryString = "select sum(points) points from points where user_id = ? ";
+	let userId = req.query.userId;
+	let auth_token = req.query.auth_token;
+	//console.log(email);
+	
+	con.query(queryString, [userId], function (err, result, fields) {
 	if(req.headers.authorization)
 		res.json(result);
 	else

@@ -1,6 +1,6 @@
 <div class="mobile-menu"> 
 	<a 
-		href='{{ user?.username }}' 
+		routerLink="/user/{{ user?.username }}" routerLinkActive="active" 
 		class="usr-avatar"
 		*ngIf="authService.logIn"
 		>
@@ -8,7 +8,16 @@
 			src='assets/content/uploads/avatars/{{user?.avatar}}'
 			alt="{{ user?.username }}" 
 			class="img-circle user-avatar-large"
-			*ngIf="user"
 			>
 	</a>
+	<a
+		routerLink="/user/{{ user?.username }}" routerLinkActive="active" 
+		class="username"
+		*ngIf="authService.logIn"
+		>
+		{{ user?.username.length > 14 ? (user?.username | slice:0:14)+'..':(user?.username) }}
+	</a>
+	<!-- dang lam den day-->
+	<p class="points" *ngIf="!authService.logIn">
+		<i class="fa fa-star" style="color:gold"></i>{{ point?.points }} points</p>	
 	
