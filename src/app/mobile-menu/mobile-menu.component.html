@@ -1,0 +1,14 @@
+<div class="mobile-menu"> 
+	<a 
+		href='{{ user?.username }}' 
+		class="usr-avatar"
+		*ngIf="authService.logIn"
+		>
+			<img
+			src='assets/content/uploads/avatars/{{user?.avatar}}'
+			alt="{{ user?.username }}" 
+			class="img-circle user-avatar-large"
+			*ngIf="user"
+			>
+	</a>
+	

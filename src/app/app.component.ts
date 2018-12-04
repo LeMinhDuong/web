@@ -40,7 +40,7 @@ export class AppComponent {
 			this.settingsService.getSettings().subscribe(res =>
 				{
 					this.settings = res[0];
-					console.log(this.settings);
+					//console.log(this.settings);
 					this.setTitle(this.settings.website_name+" - "+ this.settings.website_description);
 				}
 			
