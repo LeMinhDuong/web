@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../auth.service';
 import { UserService } from './../user.service';
 import { PointsService } from './../points.service';
+import { CategoriesService } from './../categories.service';
 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobile-menu',
@@ -20,7 +22,9 @@ export class MobileMenuComponent implements OnInit {
 	constructor(
 		private authService:AuthService,
 		private userService:UserService,
-		private pointsService:PointsService
+		private pointsService:PointsService,
+		private categoriesService:CategoriesService,
+		private router: Router
 	) { }
 
   ngOnInit() {
@@ -31,8 +35,12 @@ export class MobileMenuComponent implements OnInit {
 		if(this.user){
 			this.pointsService.getPointByUserId(this.user.id).subscribe((data: {}) => {
 				this.point = data[0];
-				console.log(this.point);
+				//console.log(this.point);
+				console.log(this.router.url);
 			});
+			this.categoriesService.getCatergories().subscribe((data: {}) => {
+				console.log(data);
+			});			
 		}	
 			
 	});

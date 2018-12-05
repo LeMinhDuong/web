@@ -132,4 +132,16 @@ app.get('/get-point-by-userid', (req, res) =>
     });
 })
 
+app.get('/get-categories', (req, res) =>
+{
+	let queryString = "select * from categories order by id asc ";
+	
+	con.query(queryString, function (err, result, fields) {
+	if(req.headers.authorization)
+		res.json(result);
+	else
+		res.json({ message: 'Error' });
+    });
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
