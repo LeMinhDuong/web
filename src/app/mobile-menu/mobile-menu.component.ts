@@ -59,7 +59,7 @@ export class MobileMenuComponent implements OnInit {
 			this.pagesService.getPage().subscribe(res =>
 				{
 					this.pages = res;
-					console.log(this.pages);
+					//console.log(this.pages);
 				}
 			);	
 		}	
