@@ -35,6 +35,7 @@ export class AppComponent {
 	catergories;
 	pages;
 	point;
+	user;
 	@Input() search: string;
 	constructor(
 		private authService:AuthService,
