@@ -1,23 +1,129 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-fixed-top" role="navigation">
 	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-				<span class="sr-only">lang.toggle_navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a 
-				class="navbar-brand logo" 
-				href="/">
-				<img 
-					src="assets\content\uploads\settings\logo.png" 
-					style="height:35px; width:auto;" />
-			</a>
-			
-			<!--layouts.mobile-menu-->
-			<app-mobile-menu></app-mobile-menu>
-			<!--layouts.mobile-menu-->
-<router-outlet></router-outlet>
+		<!--layouts.mobile-menu-->
+		<app-mobile-menu></app-mobile-menu>
+		<!--layouts.mobile-menu-->
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav navbar-left nav-desktop">
+				<li 
+					[ngClass]="{'active': router.url.includes('/'), 'active': router.url.includes('category') }">
+					<a href="/">
+						<i class="fa fa-home"></i><span>lang.home</span></a>
+					<div class="nav-border-bottom"></div>
+				</li>
+				<li [ngClass]="{ 'dropdown active':router.url.includes('popular'), 'dropdown': !router.url.includes('popular')}">
+					<a 
+						href="#" 
+						class="dropdown-toggle" 
+						data-toggle="dropdown">
+						<i class="fa fa-star"></i>
+						<span> lang.popular </span>
+						<b class="caret"></b>
+						<div class="nav-border-bottom"></div>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="popular/week">lang.for_the_week</a></li>
+						<li><a href="popular/month">lang.for_the_month</a></li>
+						<li><a href="popular/year">lang.for_the_year</a></li>
+						<li><a href="popular">lang.all_time</a></li>
+					 </ul>
+				</li>
+				<li class="dropdown">
+					<a 
+						href="#" 
+						class="dropdown-toggle categories" 
+						data-toggle="dropdown">
+						<i class="fa fa-folder-open"></i>
+						<span>lang.categories</span>
+						<b class="caret"></b>
+						<div class="nav-border-bottom"></div>
+					</a>
+					<ul class="dropdown-menu">
+						<li *ngFor="let category of categories">
+							<a href="category/{{category?.name |lowercase}}">{{ category?.name }}</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li *ngIf="settings?.pages_in_menu" [ngClass]="{'dropdown active': router.url.includes('pages'),'dropdown': !router.url.includes('pages') }">
+					<a 
+						href="#" 
+						class="dropdown-toggle" 
+						data-toggle="dropdown">
+						<i class="fa fa-file-text"></i>{{ settings?.pages_in_menu_text }}<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li *ngFor="let page of pages">
+							<a href="pages/{{page?.url}}">{{ $page?.title }}</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/random" class="random"><i class="fa fa-random"></i></a></li>
+				<li *ngIf="authService.logIn && settings?.user_registration">
+					<a href="/upload" class="upload-btn upload-btn-desktop">
+						<i class="fa fa-cloud-upload"></i>lang.upload</a>
+				</li>
+				<li 
+					[ngClass]="{'active': router.url.includes('signin')}"
+					*ngIf="!authService.logIn"
+					>
+					<a href="/signin">lang.sign_in</a>
+				</li>
+				<li 
+					[ngClass]="{'active': router.url.includes('signin')}"
+					*ngIf="!authService.logIn && settings?.user_registration"
+					>
+					<a href="/signup">lang.sign_up</a>
+				</li>
+				<li class="dropdown" *ngIf="authService.logIn">
+					<a 
+						href="#" 
+						class="user-menu user-menu-desktop dropdown-toggle" 
+						data-toggle="dropdown">
+						<img
+						src='assets/content/uploads/avatars/{{user?.avatar}}'
+						alt="{{ user?.username }}" 
+						class="img-circle"
+						/>
+						<b class="caret"></b>
+						<div id="user-info">
+							<h4>{{ user?.username.length > 8 ? (user?.username | slice:0:8)+'..':(user?.username) }}</h4>
+							<p>{{ point?.points }} points</p>
+						</div> 
+					</a>
+					<ul class="dropdown-menu">
+						<li *ngIf="user?.admin == 1">
+							<a href="/admin" class="admin_link_desktop">
+								<i class="fa fa-coffee"></i>lang.admin</a>
+						</li>
+						<li><a 
+							href="user/{{user?.username}}" 
+							class="user-profile-link-desktop">
+							<i class="fa fa-user"></i>lang.my_profile</a>
+						</li>
+						<li>
+							<a href="/logout" id="user_logout_desktop">
+							<i class="fa fa-power-off"></i> lang.logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container -->
+</nav>
+	
+<div id="main_container">		
+	<router-outlet></router-outlet>
+</div>
+
+<div id="footer">
+&copy; 
+<!-- lam den day -->
+</div>
+
+
 

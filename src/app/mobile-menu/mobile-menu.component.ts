@@ -24,6 +24,7 @@ export class MobileMenuComponent implements OnInit {
 	categories;
 	settings;
 	pages;
+	issignin;
 	constructor(
 		private authService:AuthService,
 		private userService:UserService,

@@ -1,8 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { AuthService } from './auth.service';
 import { SettingsService } from './settings.service';
 import {MediaService} from './media.service';
 import {CatergoryService} from './catergory.service';
 import {PagesService} from './pages.service';
+import { PointsService } from './points.service';
+import { UserService } from './user.service';
+
 import { Title , Meta}     from '@angular/platform-browser';
 
 import { environment } from './../environments/environment';
@@ -15,10 +19,13 @@ import { Router } from '@angular/router';
 	'./app.component.css',
 	],
   providers : [
+	AuthService,
 	SettingsService,
 	MediaService,
 	CatergoryService,
-	PagesService
+	PagesService,
+	PointsService,
+	UserService
 	]
 })
 export class AppComponent {
@@ -27,12 +34,16 @@ export class AppComponent {
 	media;
 	catergories;
 	pages;
+	point;
 	@Input() search: string;
 	constructor(
+		private authService:AuthService,
 		private settingsService:SettingsService,
 		private mediaService:MediaService,
 		private catergoryService:CatergoryService,
 		private pagesService:PagesService,
+		private pointsService:PointsService,
+		private userService:UserService,
 		private titleService: Title,
 		private meta: Meta,
 		private router: Router
@@ -103,6 +114,17 @@ export class AppComponent {
 			
 			this.pagesService.getPage().subscribe((data: {}) => {
 				this.pages = data;
+			});
+			
+			let email = 'admin@admin.com';  
+			this.userService.getUserByEmail(email).subscribe((data: {}) => {
+					this.user = data[0];
+					//console.log(this.user);
+				if(this.user){
+					this.pointsService.getPointByUserId(this.user.id).subscribe((data: {}) => {
+						this.point = data[0];
+					});
+				}
 			});
 			
 			this.meta.updateTag({ name:'viewport',content:'initial-scale=1'});
