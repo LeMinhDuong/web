@@ -1,10 +1,14 @@
+<style type="text/css">
+	div.pagination{
+		visibility:hidden;
+	}
+</style>
 <div class="navbar gallery-sub-header">
-  <div class="container">
-	<p>
-	  home works!
-	  {{settings?.website_name}}
-	</p>
+	<div class="container">
+		<div class="pull-left desc-follow">
+			<p class="website_desc pull-left">{{ settings?.website_description }}</p>
+		</div>
+	</div>
 	<a routerLink="/admin" routerLinkActive="active">Admin</a>
 	<a routerLink="/demo" routerLinkActive="active"> demo</a>
-	</div>
 </div>
