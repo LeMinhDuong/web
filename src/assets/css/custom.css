@@ -1,0 +1,170 @@
+/*includes.custom_css*/
+.btn.btn-color, input[type="submit"]{
+	background:#ee222e !important;
+	color:#fff;
+	border-radius:0px;
+}
+
+h2 i{
+	color:#ee222e;
+}
+
+.btn-color:hover{
+	color:#fff;
+}
+
+.btn.btn-radio {
+	background: #ff3642;
+	color:#fff;
+}
+
+.btn.btn-radio.active {
+	background:#ee222e;
+	color:#fff;
+}
+
+#nprogress .bar {
+	background:#ee222e !important ;
+}
+
+#nprogress .spinner-icon {
+	border-top-color:#ee222e !important ;
+	border-left-color:#ee222e !important;
+}
+#nprogress .peg {
+	box-shadow: 0 0 10px #ee222e, 0 0 5px #ee222e !important;
+}
+
+.nav .caret, .nav>li>a, .navbar .navbar-nav>.active>a, .nav a:hover .caret{
+	color:#ee222e;
+	border-top-color:#ee222e;
+	border-bottom-color:#ee222e;
+}
+
+.navbar-nav>li>a.upload-btn, .navbar-inverse .navbar-nav>li>a:hover
+{
+	background:#ee222e;
+}
+
+.active .nav-border-bottom{
+	background:#ee222e;
+}
+
+.form-control:focus{
+	border-color:#ee222e;
+}
+
+a.spcl-button.color {
+	background-color:#ee222e;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+	background:#ee222e;
+}
+
+ul.tags li a{
+	background:#ee222e;
+}
+
+div.tagsinput span.tag{
+	border:1px solid #ee222e;
+	color:#fff;
+	background:#ff3642;
+}
+
+.table-striped>tbody>tr:first-child>th{
+	background:#ee222e;
+	border:0px;
+	color:#fff;
+}
+
+.table-striped>tbody>tr:first-child{
+	border:0px;
+}
+.table-striped>tbody>tr:nth-child(2)>td{
+	border-top-color:#ff5460;
+}
+
+.pagination>li>a{
+	background:#bc0000;
+}
+
+.pagination>li>span, .pagination>.active>span, .pagination>li>a:hover, .pagination>.active>span:hover{
+	background:#ff5460;
+}
+
+.pagination>li>span:hover, .pagination>.disabled>span{
+	background:#ff8692;
+	color:#bc0000;
+}
+
+.pagination>li>a, .pagination>li>span, .pagination>.disabled>span, .pagination>.disabled>a, .pagination>.disabled>a:hover, .pagination>.disabled>a:focus, .pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus{
+	border:1px solid #ee222e;
+}
+
+div.tagsinput span.tag a{
+	color:#bc0000;
+}
+
+a.spcl-button.color:hover {
+	background-color:#ff3642;
+	color:#fff;
+}
+
+.btn.btn-prev:hover, .btn.btn-next:hover{
+	background:#ee222e;
+}
+
+
+
+/********** SECONDARY COLOR **********/
+.home-media-like.active{
+	background:#12c3ee;
+}
+
+p.home-like-count{
+	color:#12c3ee;
+}
+
+a, a:hover, a:focus{
+	color:#12c3ee;
+}
+
+.user-menu p {
+	color:#12c3ee;
+}
+
+#next_media li a div.active, #next_media li a:hover div{
+	border-color:#12c3ee;
+}
+
+.admin-block.active, .admin-block:hover{
+	border-color:#ee222e;
+}
+
+h2.subheader{
+	border-color:#bc0000;
+	background:#ee222e;
+}
+
+.ouro:after {
+	background-color:#ee222e;
+}
+
+.ouro {
+	background-color:#ff5460;
+}
+
+h2.subheader i{
+	color:#bc0000;
+}
+
+.load-more-btn{
+	border-bottom-color:#bc0000;
+}
+
+
+.navbar.gallery-sub-header{
+	top:52px;
+}
+/*includes.custom_css*/
