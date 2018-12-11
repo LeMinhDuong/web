@@ -12,10 +12,11 @@ export class HomeComponent implements OnInit {
 	constructor(private settingsService:SettingsService) { }
 
 	ngOnInit() {
-		/*this.settingsService.getSettings().subscribe((data: {}) => {
+		this.settingsService.getSettings().subscribe((data: {}) => {
 			this.settings = data[0];
-			//console.log(this.settings);
-		});*/
+			console.log('home');
+			console.log(this.settings);
+		});
 	}
 	
 }
