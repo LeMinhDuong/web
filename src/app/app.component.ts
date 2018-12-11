@@ -32,10 +32,12 @@ export class AppComponent {
 	title = 'web';
 	settings;
 	media;
-	catergories;
+	categories;
 	pages;
 	point;
 	user;
+	
+	today: number = Date.now();
 	@Input() search: string;
 	constructor(
 		private authService:AuthService,
@@ -110,7 +112,8 @@ export class AppComponent {
 			}
 			
 			this.catergoryService.getCatergory().subscribe((data: {}) => {
-				this.catergories = data;
+				this.categories = data;
+				//console.log(this.categories);
 			});
 			
 			this.pagesService.getPage().subscribe((data: {}) => {

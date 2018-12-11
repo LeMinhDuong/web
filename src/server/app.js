@@ -7,24 +7,24 @@ var mysql = require('mysql');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 
-var con = mysql.createConnection({
-  host: "localhost", // ip address of server running mysql
-  user: "root", // user name to your mysql database
-  password: "", // corresponding password
-  database: "web" // use the specified database
-});
-
-var connection;
+var dbConfig = {
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'web',
+        port: 3306
+};	
+var con;
 
 function handleDisconnect() {
-  connection = mysql.createConnection(con);                                               
-  connection.connect(function(err) {              
+  con = mysql.createConnection(dbConfig);                                               
+  con.connect(function(err) {              
     if(err) {                                     
       console.log('error when connecting to db:', err);
       setTimeout(handleDisconnect, 2000); 
     }                                     
   });                                                                            
-  connection.on('error', function(err) {
+  con.on('error', function(err) {
     console.log('db error', err);
     if(err.code === 'PROTOCOL_CONNECTION_LOST') { 
       handleDisconnect();                         
