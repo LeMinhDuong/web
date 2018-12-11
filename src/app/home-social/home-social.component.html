@@ -1,3 +1,11 @@
-<p>
-  home-social works!
-</p>
+<div 
+	class="twitter-follow pull-left"
+	*ngIf="settings?.twitter_page_id">
+	<a 
+		href="https://twitter.com/{{ settings?.twitter_page_id }}" 
+		class="twitter-follow-button" 
+		data-show-count="false">
+		follow_at {{ settings?.twitter_page_id }}</a>	
+</div>
+
+
