@@ -14,8 +14,7 @@ export class HomeComponent implements OnInit {
 	ngOnInit() {
 		this.settingsService.getSettings().subscribe((data: {}) => {
 			this.settings = data[0];
-			console.log('home');
-			console.log(this.settings);
+			//console.log(this.settings);
 		});
 	}
 	
