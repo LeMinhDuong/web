@@ -19,6 +19,8 @@ export class HomeSocialComponent implements OnInit {
 	
 	@ViewChildren('divtwitter') divtwitter: QueryList<ElementRef>;
 	@ViewChildren('divfacebook') divfacebook: QueryList<ElementRef>;
+	@ViewChildren('divgoogle') divgoogle: QueryList<ElementRef>;
+	
 	settings;	
 	constructor(
 		private settingsService:SettingsService, 
@@ -36,6 +38,7 @@ export class HomeSocialComponent implements OnInit {
 			//console.log(this.settings);
 			this.loadScriptTwitter();
 			this.loadScriptFacebook();
+			this.loadScriptGoogle();
 		});
 	}
 	
@@ -61,6 +64,20 @@ export class HomeSocialComponent implements OnInit {
 			script.async = true;
 			script.defer = true;
 			script.src = 'assets/js/facebook-like.js';
+			script.charset = "utf-8";
+			let text = this.renderer.createText('');
+			this.renderer.appendChild(script, text);
+			this.renderer.appendChild(comps.first.nativeElement, script);
+		}
+	}
+	
+	loadScriptGoogle() {
+		this.divgoogle.changes.subscribe((comps: QueryList<ElementRef>) =>
+		{	
+			let script = this.renderer.createElement('script');
+			script.async = true;
+			script.defer = true;
+			script.src = 'https://apis.google.com/js/platform.js';
 			script.charset = "utf-8";
 			let text = this.renderer.createText('');
 			this.renderer.appendChild(script, text);
