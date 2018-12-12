@@ -1,11 +1,25 @@
 <div 
 	class="twitter-follow pull-left"
-	*ngIf="settings?.twitter_page_id">
+	*ngIf="settings?.twitter_page_id" #divtwitter>
 	<a 
 		href="https://twitter.com/{{ settings?.twitter_page_id }}" 
 		class="twitter-follow-button" 
 		data-show-count="false">
 		follow_at {{ settings?.twitter_page_id }}</a>	
+</div>
+
+<div 
+	class="facebook-like pull-left"
+	*ngIf="settings?.facebook_page_id" #divfacebook>
+	<div 
+		class="fb-like" 
+		data-href="https://developers.facebook.com/docs/plugins/" 
+		data-layout="button" 
+		data-action="like" 
+		data-size="small" 
+		data-show-faces="false" 
+		data-share="false"></div>
+	<div id="fb-root"></div>	
 </div>
 
 
