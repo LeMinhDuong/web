@@ -80,8 +80,20 @@ export class HomeSocialComponent implements OnInit {
 			script.src = 'https://apis.google.com/js/platform.js';
 			script.charset = "utf-8";
 			let text = this.renderer.createText('');
-			this.renderer.appendChild(script, text);
+			//this.renderer.appendChild(script, text);
 			this.renderer.appendChild(comps.first.nativeElement, script);
+			
+			let div = this.renderer.createElement('div');
+			//div.class = ;
+			this.renderer.addClass(div, 'g-follow');
+			this.renderer.setAttribute(div, 'data-annotation', "bubble");
+			this.renderer.setAttribute(div, 'data-height', "20");
+			this.renderer.setAttribute(div, 'data-rel', "publisher");
+			this.renderer.setAttribute(div, 'data-href', "//plus.google.com/u/0/106287962206400872348");
+			//div.data-href = "https://plus.google.com/envato";
+			//div.data-rel = "relationshipType";
+			this.renderer.appendChild(comps.first.nativeElement, div);
+			
 		}
 	}
 }
