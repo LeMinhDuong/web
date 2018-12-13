@@ -34,7 +34,6 @@ export class HomeSocialComponent implements OnInit {
 	{
 		this.settingsService.getSettings().subscribe((data: {}) => {
 			this.settings = data[0];
-			//console.log(this.settings);
 			this.loadScriptTwitter();
 			this.loadScriptFacebook();
 			this.loadScriptGoogle();
@@ -82,17 +81,14 @@ export class HomeSocialComponent implements OnInit {
 			//this.renderer.appendChild(script, text);
 			this.renderer.appendChild(comps.first.nativeElement, script);
 			
-			let div = this.renderer.createElement('div');
-			
+			let div = this.renderer.createElement('div');	
 			this.renderer.addClass(div, 'g-follow');
 			this.renderer.setAttribute(div, 'data-annotation', "bubble");
 			this.renderer.setAttribute(div, 'data-height', "20");
 			this.renderer.setAttribute(div, 'data-rel', "publisher");
 			this.renderer.setAttribute(div, 'data-href', "//plus.google.com/u/0/106287962206400872348");
 			//this.renderer.setAttribute(div, 'data-href', "//plus.google.com/envato");
-			
 			this.renderer.appendChild(comps.first.nativeElement, div);
-			
 		}
 	}
 }

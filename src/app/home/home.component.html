@@ -1,4 +1,4 @@
-<style type="text/css">
+<style type="text/css" *ngIf="settings?.infinite_scroll">
 	div.pagination{
 		visibility:hidden;
 	}
@@ -9,7 +9,42 @@
 			<p class="website_desc pull-left">{{ settings?.website_description }}</p>
 			<app-home-social></app-home-social>
 		</div>
+		
+		<div class="pull-right mobile-pull-right" #divmobilepullright>
+			<form 
+				class="navbar-form search-form col-xs-12" 
+				role="search"
+				style="margin:0px; padding-top:4px;" 
+				action="/admin" method="GET">
+				<div class="form-group">
+					<input 
+						type="text" 
+						class="form-control" 
+						name="search" 
+						placeholder="lang.search" 
+						[(ngModel)]="search"
+						style="-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; height:30px;">
+	            </div>
+			</form>		
+			<div class="search_settings">
+				<i class="fa fa-search"></i>
+				<i 
+				class="fa fa-cog option-sidebar-toggle">
+					<span class="cog-arrow-up">&#9650;</span>
+					<span class="cog-arrow-down">&#9660;</span>
+				</i>
+			</div>	
+		</div>
 	</div>
-	<a routerLink="/admin" routerLinkActive="active">Admin</a>
-	<a routerLink="/demo" routerLinkActive="active"> demo</a>
 </div>
+
+<h4 class="container search-text" *ngIf="search">{{ search }}</h4>
+<style type="text/css" *ngIf="search">.main_home_container{ padding-top:0px; }</style>
+
+<div class="container main_home_container main_home">
+	<div class="col-md-8 col-lg-8" style="display:block; clear:both; margin:0px auto; padding:0px; padding-bottom:70px;">
+	</div>
+</div>	
+	
+<a routerLink="/admin" routerLinkActive="active">Admin</a>
+<a routerLink="/demo" routerLinkActive="active"> demo</a>
