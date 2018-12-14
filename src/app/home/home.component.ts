@@ -1,4 +1,4 @@
-import { Component, OnInit, Input , Renderer2, ElementRef, ViewChildren} from '@angular/core';
+import { Component, OnInit, Input , Renderer2, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { SettingsService } from './../settings.service';
 @Component({
   selector: 'app-home',

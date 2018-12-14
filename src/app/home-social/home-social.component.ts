@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ElementRef, Directive, ViewChild, ViewChildren } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, Directive, ViewChild, ViewChildren, QueryList  } from '@angular/core';
 import { SettingsService } from './../settings.service';
 
 @Component({
@@ -69,7 +69,7 @@ export class HomeSocialComponent implements OnInit {
 			this.renderer.appendChild(comps.first.nativeElement, script);
 			
 			//this.renderer.appendChild(this.divfacebook.first.nativeElement, script);
-		})
+		});
 	}
 	
 	public loadScriptGoogle() {
@@ -94,8 +94,7 @@ export class HomeSocialComponent implements OnInit {
 			//this.renderer.setAttribute(div, 'data-href', "//plus.google.com/envato");
 			this.renderer.appendChild(comps.first.nativeElement, div);
 			
-		})
+		});
 	}
 }
 
-}
