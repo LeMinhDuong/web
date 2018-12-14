@@ -56,7 +56,7 @@ export class HomeSocialComponent implements OnInit {
 		});
 	}
 	
-	loadScriptFacebook(){
+	public loadScriptFacebook(){
 		this.divfacebook.changes.subscribe((comps: QueryList<ElementRef>) =>
 		{	
 			let script = this.renderer.createElement('script');
@@ -67,10 +67,12 @@ export class HomeSocialComponent implements OnInit {
 			let text = this.renderer.createText('');
 			this.renderer.appendChild(script, text);
 			this.renderer.appendChild(comps.first.nativeElement, script);
+			
+			//this.renderer.appendChild(this.divfacebook.first.nativeElement, script);
 		}
 	}
 	
-	loadScriptGoogle() {
+	public loadScriptGoogle() {
 		this.divgoogle.changes.subscribe((comps: QueryList<ElementRef>) =>
 		{	
 			let script = this.renderer.createElement('script');
@@ -91,6 +93,7 @@ export class HomeSocialComponent implements OnInit {
 			this.renderer.setAttribute(div, 'data-href', "//plus.google.com/u/0/102950176604279621166");
 			//this.renderer.setAttribute(div, 'data-href', "//plus.google.com/envato");
 			this.renderer.appendChild(comps.first.nativeElement, div);
+			
 		}
 	}
 }
