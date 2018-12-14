@@ -69,7 +69,7 @@ export class HomeSocialComponent implements OnInit {
 			this.renderer.appendChild(comps.first.nativeElement, script);
 			
 			//this.renderer.appendChild(this.divfacebook.first.nativeElement, script);
-		}
+		})
 	}
 	
 	public loadScriptGoogle() {
@@ -94,7 +94,7 @@ export class HomeSocialComponent implements OnInit {
 			//this.renderer.setAttribute(div, 'data-href', "//plus.google.com/envato");
 			this.renderer.appendChild(comps.first.nativeElement, div);
 			
-		}
+		})
 	}
 }
 
