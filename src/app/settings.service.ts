@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-
-const url = 'http://localhost:3000/get-settings';
+import { environment } from './../environments/environment';
+const url = environment.api_url +'/get-settings';
 const httpOptions = {
   headers: new HttpHeaders({
 	'Content-Type':  'application/json',

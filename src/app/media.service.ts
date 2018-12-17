@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-
+import { environment } from './../environments/environment';
 const httpOptions = {
   headers: new HttpHeaders({
 	'Content-Type':  'application/json',
@@ -21,7 +21,7 @@ export class MediaService {
 	}
 	getMediaBySearch(search, num_results_per_page): Observable<any> {
 		
-		let url = 'http://localhost:3000/get-media-by-search';
+		let url = environment.api_url +'/get-media-by-search';
 		
 		let httpHeaders = new HttpHeaders()
 		.set('Content-Type', 'application/json')
@@ -41,7 +41,7 @@ export class MediaService {
 	}
 	
 	getMedia(num_results_per_page): Observable<any> {
-		let url = 'http://localhost:3000/get-media';
+		let url = environment.api_url +'/get-media';
 		
 		let httpHeaders = new HttpHeaders()
 		.set('Content-Type', 'application/json')

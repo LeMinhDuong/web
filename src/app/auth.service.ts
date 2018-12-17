@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-
+import { environment } from './../environments/environment';
 const httpOptions = {
   headers: new HttpHeaders({
 	'Content-Type':  'application/json',
@@ -23,7 +23,7 @@ export class AuthService {
 	private router: Router) { }
 	
 	login(email: string, password: string) {
-		let url = 'http://localhost:3000/';
+		let url = environment.api_url +'/';
 		localStorage.setItem('auth_token', 'token');
 	}
 	

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  num_results_per_page: 15
+  num_results_per_page: 15,
+  api_url: 'http://localhost:3000'
 };
 
 /*

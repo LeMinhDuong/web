@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-
+import { environment } from './../environments/environment';
 const httpOptions = {
   headers: new HttpHeaders({
 	'Content-Type':  'application/json',
@@ -21,7 +21,7 @@ export class CatergoryService {
 	  return body || { };
 	}
 	getCatergory(): Observable<any> {
-		let url = 'http://localhost:3000/get-catergory';
+		let url = environment.api_url +'/get-catergory';
 		
 		let httpHeaders = new HttpHeaders()
 		.set('Content-Type', 'application/json')
