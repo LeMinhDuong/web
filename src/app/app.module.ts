@@ -13,6 +13,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FormsModule } from '@angular/forms';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HomeSocialComponent } from './home-social/home-social.component';
+import { MediaLoopComponent } from './media-loop/media-loop.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Kiem Tien Online'} },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     DemoComponent,
     AdminComponent,
     MobileMenuComponent,
-    HomeSocialComponent
+    HomeSocialComponent,
+    MediaLoopComponent
   ],
   imports: [
 	HttpClientModule,

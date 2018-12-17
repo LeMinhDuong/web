@@ -6,9 +6,7 @@ import {CatergoryService} from './catergory.service';
 import {PagesService} from './pages.service';
 import { PointsService } from './points.service';
 import { UserService } from './user.service';
-
 import { Title , Meta}     from '@angular/platform-browser';
-
 import { environment } from './../environments/environment';
 import { Router } from '@angular/router';
 
