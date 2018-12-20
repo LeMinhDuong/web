@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { HomeSocialComponent } from './home-social/home-social.component';
 import { MediaLoopComponent } from './media-loop/media-loop.component';
+import { MediaGridComponent } from './media-grid/media-grid.component';
+import { MediaListComponent } from './media-list/media-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Kiem Tien Online'} },
@@ -35,7 +37,9 @@ const appRoutes: Routes = [
     AdminComponent,
     MobileMenuComponent,
     HomeSocialComponent,
-    MediaLoopComponent
+    MediaLoopComponent,
+    MediaGridComponent,
+    MediaListComponent
   ],
   imports: [
 	HttpClientModule,

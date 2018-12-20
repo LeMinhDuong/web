@@ -1,3 +1,4 @@
-<p>
-  media-loop works!
-</p>
+<app-media-grid *ngIf="media_view == 'grid_large' || media_view == 'grid'"></app-media-grid>
+<app-media-list *ngIf="media_view != 'grid_large' && media_view != 'grid' "></app-media-list>
+
+

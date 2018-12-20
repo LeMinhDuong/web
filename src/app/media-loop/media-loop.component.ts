@@ -12,13 +12,24 @@ import { environment } from './../../environments/environment';
 export class MediaLoopComponent implements OnInit {
 	
 	media;
+	media_view;
+	column;
 	constructor(private mediaService:MediaService) { }
 
 	ngOnInit() {
-		//lam tam thoi
 		this.mediaService.getMedia(environment.num_results_per_page).subscribe((data: {}) => {
 			this.media = data;
 		});
+		if( sessionStorage.getItem('media_view') == 'grid_large' 
+			|| sessionStorage.getItem('media_view') == 'grid' ) {
+			if(sessionStorage.getItem('media_view') == 'grid') {
+				sessionStorage.setItem('column', 'col-sm-4');
+			} else {
+				sessionStorage.setItem('column', 'col-sm-6');
+			}
+		}
+		this.media_view = sessionStorage.getItem('media_view');
+		this.column = sessionStorage.getItem('column');
 	}
 
 }
