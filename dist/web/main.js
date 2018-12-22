@@ -300,6 +300,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _mobile_menu_mobile_menu_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./mobile-menu/mobile-menu.component */ "./src/app/mobile-menu/mobile-menu.component.ts");
 /* harmony import */ var _home_social_home_social_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./home-social/home-social.component */ "./src/app/home-social/home-social.component.ts");
+/* harmony import */ var _media_loop_media_loop_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./media-loop/media-loop.component */ "./src/app/media-loop/media-loop.component.ts");
+/* harmony import */ var _media_grid_media_grid_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./media-grid/media-grid.component */ "./src/app/media-grid/media-grid.component.ts");
+/* harmony import */ var _media_list_media_list_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./media-list/media-list.component */ "./src/app/media-list/media-list.component.ts");
+/* harmony import */ var _media_item_media_item_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./media-item/media-item.component */ "./src/app/media-item/media-item.component.ts");
+/* harmony import */ var _pagination_pagination_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pagination/pagination.component */ "./src/app/pagination/pagination.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -312,6 +317,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 // duong add new component
+
+
+
+
+
 
 
 
@@ -341,7 +351,12 @@ var AppModule = /** @class */ (function () {
                 _demo_demo_component__WEBPACK_IMPORTED_MODULE_7__["DemoComponent"],
                 _admin_admin_component__WEBPACK_IMPORTED_MODULE_8__["AdminComponent"],
                 _mobile_menu_mobile_menu_component__WEBPACK_IMPORTED_MODULE_10__["MobileMenuComponent"],
-                _home_social_home_social_component__WEBPACK_IMPORTED_MODULE_11__["HomeSocialComponent"]
+                _home_social_home_social_component__WEBPACK_IMPORTED_MODULE_11__["HomeSocialComponent"],
+                _media_loop_media_loop_component__WEBPACK_IMPORTED_MODULE_12__["MediaLoopComponent"],
+                _media_grid_media_grid_component__WEBPACK_IMPORTED_MODULE_13__["MediaGridComponent"],
+                _media_list_media_list_component__WEBPACK_IMPORTED_MODULE_14__["MediaListComponent"],
+                _media_item_media_item_component__WEBPACK_IMPORTED_MODULE_15__["MediaItemComponent"],
+                _pagination_pagination_component__WEBPACK_IMPORTED_MODULE_16__["PaginationComponent"]
             ],
             imports: [
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
@@ -784,7 +799,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<style type=\"text/css\" *ngIf=\"settings?.infinite_scroll\">\r\n\tdiv.pagination{\r\n\t\tvisibility:hidden;\r\n\t}\r\n</style>\r\n<div class=\"navbar gallery-sub-header\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"pull-left desc-follow\">\r\n\t\t\t<p class=\"website_desc pull-left\">{{ settings?.website_description }}</p>\r\n\t\t\t<app-home-social></app-home-social>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div class=\"pull-right mobile-pull-right\" #divmobilepullright>\r\n\t\t\t<form \r\n\t\t\t\tclass=\"navbar-form search-form col-xs-12\" \r\n\t\t\t\trole=\"search\"\r\n\t\t\t\tstyle=\"margin:0px; padding-top:4px;\" \r\n\t\t\t\taction=\"/admin\" method=\"GET\">\r\n\t\t\t\t<div class=\"form-group\">\r\n\t\t\t\t\t<input \r\n\t\t\t\t\t\ttype=\"text\" \r\n\t\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\t\tname=\"search\" \r\n\t\t\t\t\t\tplaceholder=\"lang.search\" \r\n\t\t\t\t\t\t[(ngModel)]=\"search\"\r\n\t\t\t\t\t\tstyle=\"-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; height:30px;\">\r\n\t            </div>\r\n\t\t\t</form>\t\t\r\n\t\t\t<div class=\"search_settings\">\r\n\t\t\t\t<i class=\"fa fa-search\"></i>\r\n\t\t\t\t<i \r\n\t\t\t\tclass=\"fa fa-cog option-sidebar-toggle\">\r\n\t\t\t\t\t<span class=\"cog-arrow-up\">&#9650;</span>\r\n\t\t\t\t\t<span class=\"cog-arrow-down\">&#9660;</span>\r\n\t\t\t\t</i>\r\n\t\t\t</div>\t\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<h4 class=\"container search-text\" *ngIf=\"search\">{{ search }}</h4>\r\n<style type=\"text/css\" *ngIf=\"search\">.main_home_container{ padding-top:0px; }</style>\r\n\r\n<div class=\"container main_home_container main_home\">\r\n\t<div class=\"col-md-8 col-lg-8\" style=\"display:block; clear:both; margin:0px auto; padding:0px; padding-bottom:70px;\">\r\n\t</div>\r\n</div>\t\r\n\t\r\n<a routerLink=\"/admin\" routerLinkActive=\"active\">Admin</a>\r\n<a routerLink=\"/demo\" routerLinkActive=\"active\"> demo</a>"
+module.exports = "<style type=\"text/css\" *ngIf=\"settings?.infinite_scroll\">\r\n\tdiv.pagination{\r\n\t\tvisibility:hidden;\r\n\t}\r\n</style>\r\n<div class=\"navbar gallery-sub-header\">\r\n\t<div class=\"container\">\r\n\t\t<div class=\"pull-left desc-follow\">\r\n\t\t\t<p class=\"website_desc pull-left\">{{ settings?.website_description }}</p>\r\n\t\t\t<app-home-social></app-home-social>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div class=\"pull-right mobile-pull-right\" #divmobilepullright>\r\n\t\t\t<form \r\n\t\t\t\tclass=\"navbar-form search-form col-xs-12\" \r\n\t\t\t\trole=\"search\"\r\n\t\t\t\tstyle=\"margin:0px; padding-top:4px;\" \r\n\t\t\t\taction=\"/admin\" method=\"GET\">\r\n\t\t\t\t<div class=\"form-group\">\r\n\t\t\t\t\t<input \r\n\t\t\t\t\t\ttype=\"text\" \r\n\t\t\t\t\t\tclass=\"form-control\" \r\n\t\t\t\t\t\tname=\"search\" \r\n\t\t\t\t\t\tplaceholder=\"lang.search\" \r\n\t\t\t\t\t\t[(ngModel)]=\"search\"\r\n\t\t\t\t\t\tstyle=\"-webkit-border-radius: 20px; -moz-border-radius: 20px; border-radius: 20px; height:30px;\">\r\n\t            </div>\r\n\t\t\t</form>\t\t\r\n\t\t\t<div class=\"search_settings\">\r\n\t\t\t\t<i class=\"fa fa-search\"></i>\r\n\t\t\t\t<i \r\n\t\t\t\tclass=\"fa fa-cog option-sidebar-toggle\">\r\n\t\t\t\t\t<span class=\"cog-arrow-up\">&#9650;</span>\r\n\t\t\t\t\t<span class=\"cog-arrow-down\">&#9660;</span>\r\n\t\t\t\t</i>\r\n\t\t\t</div>\t\r\n\t\t</div>\r\n\t</div>\r\n</div>\r\n\r\n<h4 class=\"container search-text\" *ngIf=\"search\">{{ search }}</h4>\r\n<!--style type=\"text/css\" *ngIf=\"search\">.main_home_container{ padding-top:0px; }</style-->\r\n\r\n<div class=\"container main_home_container main_home\">\r\n\t<div \r\n\t\tclass=\"col-md-8 col-lg-8\" \r\n\t\tstyle=\"\r\n\t\t\tdisplay:block; \r\n\t\t\tclear:both; \r\n\t\t\tmargin:0px auto; \r\n\t\t\tpadding:0px; \r\n\t\t\tpadding-bottom:70px;\">\r\n\t\t\t<app-media-loop></app-media-loop>\r\n\t</div>\r\n</div>\t\r\n\t\r\n<a routerLink=\"/admin\" routerLinkActive=\"active\">Admin</a>\r\n<a routerLink=\"/demo\" routerLinkActive=\"active\"> demo</a>"
 
 /***/ }),
 
@@ -918,6 +933,303 @@ var IpService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], IpService);
     return IpService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/media-grid/media-grid.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/media-grid/media-grid.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/media-grid/media-grid.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/media-grid/media-grid.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  media-grid works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/media-grid/media-grid.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/media-grid/media-grid.component.ts ***!
+  \****************************************************/
+/*! exports provided: MediaGridComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaGridComponent", function() { return MediaGridComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MediaGridComponent = /** @class */ (function () {
+    function MediaGridComponent() {
+    }
+    MediaGridComponent.prototype.ngOnInit = function () {
+    };
+    MediaGridComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-media-grid',
+            template: __webpack_require__(/*! ./media-grid.component.html */ "./src/app/media-grid/media-grid.component.html"),
+            styles: [__webpack_require__(/*! ./media-grid.component.css */ "./src/app/media-grid/media-grid.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MediaGridComponent);
+    return MediaGridComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/media-item/media-item.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/media-item/media-item.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/media-item/media-item.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/media-item/media-item.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  media-item works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/media-item/media-item.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/media-item/media-item.component.ts ***!
+  \****************************************************/
+/*! exports provided: MediaItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaItemComponent", function() { return MediaItemComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MediaItemComponent = /** @class */ (function () {
+    function MediaItemComponent() {
+    }
+    MediaItemComponent.prototype.ngOnInit = function () {
+    };
+    MediaItemComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-media-item',
+            template: __webpack_require__(/*! ./media-item.component.html */ "./src/app/media-item/media-item.component.html"),
+            styles: [__webpack_require__(/*! ./media-item.component.css */ "./src/app/media-item/media-item.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MediaItemComponent);
+    return MediaItemComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/media-list/media-list.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/media-list/media-list.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/media-list/media-list.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/media-list/media-list.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"media\" style=\"padding-bottom:70px;\">\r\n\t\t<div\r\n\t\t\t*ngFor=\"let item of media; let count = index\"\t\t \r\n\t\t\tattr.data-href=\"media/{{item?.id}}\" \r\n\t\t\tdata-id=\"{{ item?.id }}\"\r\n\t\t\tclass=\"col-sm-12 item animated single-left\">\r\n\t\t\t<div class=\"social_container\">\r\n\t\t\t\t<ul class=\"socialcount socialcount-large\" attr.data-url=\"media/{{ item?.slug }}\">\r\n\t\t\t\t\t<li \r\n\t\t\t\t\t\tclass=\"facebook\">\r\n\t\t\t\t\t\t<a href=\"https://www.facebook.com/sharer/sharer.php?u=media/{{ item?.slug }}\" \r\n\t\t\t\t\t\t\ttarget=\"_blank\" \r\n\t\t\t\t\t\t\ttitle=\"lang.share_facebook\" \r\n\t\t\t\t\t\t\tonclick=\"javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;\">\r\n\t\t\t\t\t\t\t<span class=\"fa fa-facebook\"></span>\r\n\t\t\t\t\t\t\t<span class=\"count\">fb_share</span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li \r\n\t\t\t\t\t\tclass=\"twitter\" \r\n\t\t\t\t\t\tattr.data-share-text=\"{{ item?.title }}\">\r\n\t\t\t\t\t\t<a \r\n\t\t\t\t\t\t\thref=\"https://twitter.com/intent/tweet?url=media/{{ item?.slug }}&text={{ item?.title }}\" \r\n\t\t\t\t\t\t\tattr.data-url=\"media/{{ item?.slug }}\" \r\n\t\t\t\t\t\t\ttitle=\"lang.share_twitter\" \r\n\t\t\t\t\t\t\tonclick=\"javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;\">\r\n\t\t\t\t\t\t\t<span class=\"fa fa-twitter\" attr.data-url=\"media/{{ item?.slug }}\"></span>\r\n\t\t\t\t\t\t\t<span class=\"count\">tweet</span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li class=\"googleplus\">\r\n\t\t\t\t\t\t<a \r\n\t\t\t\t\t\t\thref=\"https://plus.google.com/share?url=media/{{ item?.slug }}\" \r\n\t\t\t\t\t\t\ttarget=\"_blank\" \r\n\t\t\t\t\t\t\ttitle=\"lang.share_google\" \r\n\t\t\t\t\t\t\tonclick=\"javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;\">\r\n\t\t\t\t\t\t\t<span class=\"fa fa-google-plus\"></span>\r\n\t\t\t\t\t\t\t<span class=\"count\">plus_one</span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\r\n\t\t\t\t\t<li class=\"pinterest\">\r\n\t\t\t\t\t\t<a href=\"//www.pinterest.com/pin/create/button/?url=media/{{ item?.slug }}&media=/assets/content/uploads/images/{{ item?.pic_url }}&description={{ item?.title }}\" \r\n\t\t\t\t\t\t\ttitle=\"lang.share_pinit\" \r\n\t\t\t\t\t\t\ttarget=\"_blank\" \r\n\t\t\t\t\t\t\tonclick=\"javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;\">\r\n\t\t\t\t\t\t\t<span class=\"fa fa-pinterest\"></span>\r\n\t\t\t\t\t\t\t<span class=\"count\">pin_it</span>\r\n\t\t\t\t\t\t</a>\r\n\t\t\t\t\t</li>\t\t\t\t\t\t\r\n\t\t\t\t</ul>\r\n\t\t\t</div>\r\n\t\t\t\r\n\t\t\t<app-media-item></app-media-item>\r\n\t\t\t<div style=\"clear:both\"></div>\r\n\t\t\t<div class=\"media-separator\"></div>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div style=\"clear:both\"></div>\r\n\t\t<app-pagination></app-pagination>\r\n</div>\r\n\t\r\n"
+
+/***/ }),
+
+/***/ "./src/app/media-list/media-list.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/media-list/media-list.component.ts ***!
+  \****************************************************/
+/*! exports provided: MediaListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaListComponent", function() { return MediaListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _media_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../media.service */ "./src/app/media.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MediaListComponent = /** @class */ (function () {
+    function MediaListComponent(mediaService) {
+        this.mediaService = mediaService;
+    }
+    MediaListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.search = sessionStorage.getItem('search');
+        if (this.search) {
+            this.mediaService.getMediaBySearch(this.search, _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].num_results_per_page)
+                .subscribe(function (data) {
+                _this.media = data;
+            });
+        }
+        else {
+            this.mediaService.getMedia(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].num_results_per_page).subscribe(function (data) {
+                _this.media = data;
+                console.log(_this.media);
+            });
+        }
+    };
+    MediaListComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-media-list',
+            template: __webpack_require__(/*! ./media-list.component.html */ "./src/app/media-list/media-list.component.html"),
+            styles: [__webpack_require__(/*! ./media-list.component.css */ "./src/app/media-list/media-list.component.css")],
+            providers: [
+                _media_service__WEBPACK_IMPORTED_MODULE_1__["MediaService"]
+            ]
+        }),
+        __metadata("design:paramtypes", [_media_service__WEBPACK_IMPORTED_MODULE_1__["MediaService"]])
+    ], MediaListComponent);
+    return MediaListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/media-loop/media-loop.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/media-loop/media-loop.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/media-loop/media-loop.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/media-loop/media-loop.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<app-media-grid *ngIf=\"media_view == 'grid_large' || media_view == 'grid'\"></app-media-grid>\r\n<app-media-list *ngIf=\"media_view != 'grid_large' && media_view != 'grid' \"></app-media-list>\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/media-loop/media-loop.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/media-loop/media-loop.component.ts ***!
+  \****************************************************/
+/*! exports provided: MediaLoopComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MediaLoopComponent", function() { return MediaLoopComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _media_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../media.service */ "./src/app/media.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../environments/environment */ "./src/environments/environment.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var MediaLoopComponent = /** @class */ (function () {
+    function MediaLoopComponent(mediaService) {
+        this.mediaService = mediaService;
+    }
+    MediaLoopComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mediaService.getMedia(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].num_results_per_page).subscribe(function (data) {
+            _this.media = data;
+        });
+        if (sessionStorage.getItem('media_view') == 'grid_large'
+            || sessionStorage.getItem('media_view') == 'grid') {
+            if (sessionStorage.getItem('media_view') == 'grid') {
+                sessionStorage.setItem('column', 'col-sm-4');
+            }
+            else {
+                sessionStorage.setItem('column', 'col-sm-6');
+            }
+        }
+        this.media_view = sessionStorage.getItem('media_view');
+        this.column = sessionStorage.getItem('column');
+    };
+    MediaLoopComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-media-loop',
+            template: __webpack_require__(/*! ./media-loop.component.html */ "./src/app/media-loop/media-loop.component.html"),
+            styles: [__webpack_require__(/*! ./media-loop.component.css */ "./src/app/media-loop/media-loop.component.css")],
+            providers: [
+                _media_service__WEBPACK_IMPORTED_MODULE_1__["MediaService"]
+            ]
+        }),
+        __metadata("design:paramtypes", [_media_service__WEBPACK_IMPORTED_MODULE_1__["MediaService"]])
+    ], MediaLoopComponent);
+    return MediaLoopComponent;
 }());
 
 
@@ -1185,6 +1497,69 @@ var PagesService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/pagination/pagination.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/pagination/pagination.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/pagination/pagination.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/pagination/pagination.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  pagination works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/pagination/pagination.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/pagination/pagination.component.ts ***!
+  \****************************************************/
+/*! exports provided: PaginationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginationComponent", function() { return PaginationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PaginationComponent = /** @class */ (function () {
+    function PaginationComponent() {
+    }
+    PaginationComponent.prototype.ngOnInit = function () {
+    };
+    PaginationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-pagination',
+            template: __webpack_require__(/*! ./pagination.component.html */ "./src/app/pagination/pagination.component.html"),
+            styles: [__webpack_require__(/*! ./pagination.component.css */ "./src/app/pagination/pagination.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PaginationComponent);
+    return PaginationComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/points.service.ts":
 /*!***********************************!*\
   !*** ./src/app/points.service.ts ***!
@@ -1380,7 +1755,7 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     num_results_per_page: 15,
-    api_url: 'https://kiemtienonline.me/api'
+    api_url: 'http://localhost:3000'
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
