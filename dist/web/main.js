@@ -1755,7 +1755,8 @@ __webpack_require__.r(__webpack_exports__);
 var environment = {
     production: false,
     num_results_per_page: 15,
-    api_url: 'http://localhost:3000'
+    //api_url: 'http://localhost:3000',
+    api_url: 'api',
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
