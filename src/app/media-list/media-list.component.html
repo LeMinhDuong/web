@@ -1,3 +1,61 @@
-<p>
-  media-list works!
-</p>
+<div id="media" style="padding-bottom:70px;">
+		<div
+			*ngFor="let item of media; let count = index"		 
+			attr.data-href="media/{{item?.id}}" 
+			data-id="{{ item?.id }}"
+			class="col-sm-12 item animated single-left">
+			<div class="social_container">
+				<ul class="socialcount socialcount-large" attr.data-url="media/{{ item?.slug }}">
+					<li 
+						class="facebook">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=media/{{ item?.slug }}" 
+							target="_blank" 
+							title="lang.share_facebook" 
+							onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;">
+							<span class="fa fa-facebook"></span>
+							<span class="count">fb_share</span>
+						</a>
+					</li>
+					<li 
+						class="twitter" 
+						attr.data-share-text="{{ item?.title }}">
+						<a 
+							href="https://twitter.com/intent/tweet?url=media/{{ item?.slug }}&text={{ item?.title }}" 
+							attr.data-url="media/{{ item?.slug }}" 
+							title="lang.share_twitter" 
+							onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;">
+							<span class="fa fa-twitter" attr.data-url="media/{{ item?.slug }}"></span>
+							<span class="count">tweet</span>
+						</a>
+					</li>
+					<li class="googleplus">
+						<a 
+							href="https://plus.google.com/share?url=media/{{ item?.slug }}" 
+							target="_blank" 
+							title="lang.share_google" 
+							onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;">
+							<span class="fa fa-google-plus"></span>
+							<span class="count">plus_one</span>
+						</a>
+					</li>
+					<li class="pinterest">
+						<a href="//www.pinterest.com/pin/create/button/?url=media/{{ item?.slug }}&media=/assets/content/uploads/images/{{ item?.pic_url }}&description={{ item?.title }}" 
+							title="lang.share_pinit" 
+							target="_blank" 
+							onclick="javascript:window.open(this.href, '_blank', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600');return false;">
+							<span class="fa fa-pinterest"></span>
+							<span class="count">pin_it</span>
+						</a>
+					</li>						
+				</ul>
+			</div>
+			
+			<app-media-item></app-media-item>
+			<div style="clear:both"></div>
+			<div class="media-separator"></div>
+		</div>
+		
+		<div style="clear:both"></div>
+		<app-pagination></app-pagination>
+</div>
+	

@@ -16,6 +16,8 @@ import { HomeSocialComponent } from './home-social/home-social.component';
 import { MediaLoopComponent } from './media-loop/media-loop.component';
 import { MediaGridComponent } from './media-grid/media-grid.component';
 import { MediaListComponent } from './media-list/media-list.component';
+import { MediaItemComponent } from './media-item/media-item.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Kiem Tien Online'} },
@@ -39,7 +41,9 @@ const appRoutes: Routes = [
     HomeSocialComponent,
     MediaLoopComponent,
     MediaGridComponent,
-    MediaListComponent
+    MediaListComponent,
+    MediaItemComponent,
+    PaginationComponent
   ],
   imports: [
 	HttpClientModule,

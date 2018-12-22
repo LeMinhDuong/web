@@ -90,12 +90,15 @@ app.get('/get-media-by-search', (req, res) =>
 app.get('/get-media', (req, res) =>
 {
 	let num_results_per_page = req.query.num_results_per_page;
-	let queryString = "select * from media mda, media_likes mdalike, comments cmt ";
-	queryString += " where active = 1 and mdalike.media_id =mda.id and  cmt.media_id = mda.id ";
-	queryString += " order by mda.created_at desc limit 0, ? ";
+	//let queryString = "select * from media mda, media_likes mdalike, comments cmt ";
+	//queryString += " where active = 1 and mdalike.media_id =mda.id and  cmt.media_id = mda.id ";
+	//queryString += " order by mda.created_at desc limit 0, ? ";
+	let queryString = 'select * from media mda order by mda.created_at desc limit 0,' + num_results_per_page;
 	con.query(queryString, [num_results_per_page], function (err, result, fields) {
-	if(req.headers.authorization)
+	if(req.headers.authorization){
 		res.json(result);
+		//console.log(queryString);
+	}
 	else
 		res.json({ message: 'Error' });
     });
