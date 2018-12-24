@@ -1,0 +1,10 @@
+https://vn.godaddy.com/
+user: leminhduongvn
+password: P@ssword123
+email: leminhduongvn@gmail.com
+
+https://www.digitalocean.com/
+user: leminhduongvn@gmail.com
+password: leminhduong9999
+
+
