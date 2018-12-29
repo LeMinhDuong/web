@@ -1,3 +1,21 @@
-<p>
-  media-item works!
-</p>
+<div class="item-large">
+	<div class="single-title">
+		<a 
+			href="user/{{item?.username}}">
+			<img 
+				src="{{ item?.user_avatar }}" 
+				class="img-circle user-avatar-medium" />
+		</a>
+		<h2 class="item-title">
+			<a 
+				href="media/{{item?.slug }}" 
+				attr.alt="{{ item?.title }}">{{ item?.title }}</a>
+		</h2>
+		<div class="item-details">
+			<p class="details">submitted_by: <a href="{{ item?.user_url }}">{{ item?.username}}</a> submitted_on {{ item?.created_at | date: 'dd/MM/yyyy'}}</p>
+			<p class="home-like-count"><i class="fa"></i> <span>{{ item?.media_likes }}</span></p>
+			<p class="home-comment-count"><i class="fa fa-comments"></i> {{ item?.comments }}</p>
+			<!--lam den day -->
+		</div>
+	</div>
+</div><!-- item-large -->
