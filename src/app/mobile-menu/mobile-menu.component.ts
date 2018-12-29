@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
   providers : [
 				AuthService,
 				UserService,
-				PointsService	
+				PointsService,
+				CategoriesService	
 			]
 })
 export class MobileMenuComponent implements OnInit {

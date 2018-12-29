@@ -10,7 +10,7 @@
 				<li 
 					[ngClass]="{'active': router.url.includes('/'), 'active': router.url.includes('category') }">
 					<a href="/">
-						<i class="fa fa-home"></i><span>lang.home</span></a>
+						<i class="fa fa-home"></i><span>home</span></a>
 					<div class="nav-border-bottom"></div>
 				</li>
 				<li [ngClass]="{ 'dropdown active':router.url.includes('popular'), 'dropdown': !router.url.includes('popular')}">
@@ -24,10 +24,10 @@
 						<div class="nav-border-bottom"></div>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="popular/week">lang.for_the_week</a></li>
-						<li><a href="popular/month">lang.for_the_month</a></li>
-						<li><a href="popular/year">lang.for_the_year</a></li>
-						<li><a href="popular">lang.all_time</a></li>
+						<li><a href="popular/week">for_the_week</a></li>
+						<li><a href="popular/month">for_the_month</a></li>
+						<li><a href="popular/year">for_the_year</a></li>
+						<li><a href="popular">all_time</a></li>
 					 </ul>
 				</li>
 				<li class="dropdown">
@@ -36,7 +36,7 @@
 						class="dropdown-toggle categories" 
 						data-toggle="dropdown">
 						<i class="fa fa-folder-open"></i>
-						<span>lang.categories</span>
+						<span>categories</span>
 						<b class="caret"></b>
 						<div class="nav-border-bottom"></div>
 					</a>
@@ -65,19 +65,19 @@
 				<li><a href="/random" class="random"><i class="fa fa-random"></i></a></li>
 				<li *ngIf="authService.logIn && settings?.user_registration">
 					<a href="/upload" class="upload-btn upload-btn-desktop">
-						<i class="fa fa-cloud-upload"></i>lang.upload</a>
+						<i class="fa fa-cloud-upload"></i>upload</a>
 				</li>
 				<li 
 					[ngClass]="{'active': router.url.includes('signin')}"
 					*ngIf="!authService.logIn"
 					>
-					<a href="/signin">lang.sign_in</a>
+					<a href="/signin">sign_in</a>
 				</li>
 				<li 
 					[ngClass]="{'active': router.url.includes('signin')}"
 					*ngIf="!authService.logIn && settings?.user_registration"
 					>
-					<a href="/signup">lang.sign_up</a>
+					<a href="/signup">sign_up</a>
 				</li>
 				<li class="dropdown" *ngIf="authService.logIn">
 					<a 
@@ -98,16 +98,16 @@
 					<ul class="dropdown-menu">
 						<li *ngIf="user?.admin == 1">
 							<a href="/admin" class="admin_link_desktop">
-								<i class="fa fa-coffee"></i>lang.admin</a>
+								<i class="fa fa-coffee"></i>admin</a>
 						</li>
 						<li><a 
 							href="user/{{user?.username}}" 
 							class="user-profile-link-desktop">
-							<i class="fa fa-user"></i>lang.my_profile</a>
+							<i class="fa fa-user"></i>my_profile</a>
 						</li>
 						<li>
 							<a href="/logout" id="user_logout_desktop">
-							<i class="fa fa-power-off"></i> lang.logout</a>
+							<i class="fa fa-power-off"></i> logout</a>
 						</li>
 					</ul>
 				</li>

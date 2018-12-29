@@ -25,7 +25,7 @@ export class MediaListComponent implements OnInit {
 		} else {
 			this.mediaService.getMedia(environment.num_results_per_page).subscribe((data: {}) => {
 				this.media = data;
-				console.log(this.media);	
+				//console.log(this.media);	
 			});
 		}
 		

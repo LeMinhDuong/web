@@ -1,6 +1,6 @@
 <div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-				<span class="sr-only">lang.toggle_navigation</span>
+				<span class="sr-only">toggle_navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -39,19 +39,19 @@
 				<ul>	
 					<li class="active">
 						<a href="/">
-							<i class="fa fa-home"></i> lang.home </a>
+							<i class="fa fa-home"></i> home </a>
 					</li>
 					<li class="dropdown">
 						<a 
 							href="#" 
 							class="dropdown-toggle" 
 							data-toggle="dropdown">
-							<i class="fa fa-star"></i> lang.popular <b class="caret"></b></a>
+							<i class="fa fa-star"></i> popular <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="popular/week">lang.for_the_week</a></li>
-							<li><a href="popular/month">lang.for_the_month</a></li>
-							<li><a href="popular/year">lang.for_the_year</a></li>
-							<li><a href="popular">lang.all_time</a></li>
+							<li><a href="popular/week">for_the_week</a></li>
+							<li><a href="popular/month">for_the_month</a></li>
+							<li><a href="popular/year">for_the_year</a></li>
+							<li><a href="popular">all_time</a></li>
 						</ul>
 					</li>
 					
@@ -60,12 +60,13 @@
 							href="#" 
 							class="dropdown-toggle categories" 
 							data-toggle="dropdown">
-							<i class="fa fa-folder-open"></i> lang.categories <b class="caret"></b></a>
+							<i class="fa fa-folder-open"></i> categories <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li *ngFor="let category of categories">
 								<a href="category/{{category?.name |lowercase}}">{{ category?.name }}</a>
 							</li>
 					  </ul>	
+					  
 					</li>
 					
 					<li class="dropdown" *ngIf="settings?.pages_in_menu">
@@ -79,20 +80,20 @@
 					</li>
 					
 					<li>
-						<a href="/random"><i class="fa fa-random"></i> lang.random</a></li>
+						<a href="/random"><i class="fa fa-random"></i> random</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li 
 						[ngClass]="{'active': router.url.includes('signin')}"
 						*ngIf="!authService.logIn"
 						>
-						<a href="/signin">lang.sign_in</a>
+						<a href="/signin">sign_in</a>
 					</li>
 					<li 
 						[ngClass]="{'active': router.url.includes('signin')}"
 						*ngIf="!authService.logIn && settings?.user_registration"
 						>
-						<a href="/signup">lang.sign_up</a>
+						<a href="/signup">sign_up</a>
 					</li>
 					<li class="dropdown" *ngIf="authService.logIn">
 						<a 
@@ -101,25 +102,25 @@
 							data-toggle="dropdown">
 							<b class="caret"></b>
 							<div id="user-info">
-								<h4><i class="fa fa-gear"></i> lang.settings</h4>
+								<h4><i class="fa fa-gear"></i> settings</h4>
 							</div>
 						</a>
 						<ul class="dropdown-menu">
 							<li *ngIf="user?.admin == 1">
 								<a href="/admin" class="admin_link_mobile">
-									<i class="fa fa-coffee"></i> lang.admin </a>
+									<i class="fa fa-coffee"></i> admin </a>
 							</li>
 							<li><a href="/user/{{user?.username}}">
-								<i class="fa fa-user"></i> lang.my_profile</a>
+								<i class="fa fa-user"></i> my_profile</a>
 							</li>
 							<li><a href="/logout" id="user_logout_mobile">
-								<i class="fa fa-power-off"></i> lang.logout</a>
+								<i class="fa fa-power-off"></i> logout</a>
 							</li>
 						</ul>
 					</li>
 					<li *ngIf="authService.logIn && settings?.user_registration">
 						<a href="/upload" class="upload-btn">
-							<i class="fa fa-cloud-upload"></i> lang.upload </a>
+							<i class="fa fa-cloud-upload"></i> upload </a>
 					</li>
 				</ul>
 			</div>
