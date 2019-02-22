@@ -264,6 +264,18 @@ sudo apt-get install libapache2-mod-php7.0
 
 
 
+hướng dẫn cài aws s3
+nginx.conf
+http {
+  client_max_body_size 2024M;
+}
+
+functions_one.php
+ if ($pt->config->s3_upload == 'on' && $is_upload == false) {
+      $media_url = "https://s3-ap-southeast-1.amazonaws.com/" . $pt->config->s3_bucket_name. "/". $media;
+ } else if ($pt->config->ftp_upload == "on") {
+      return addhttp($pt->config->ftp_endpoint) . '/' . $media;
+ }
 
 
 
